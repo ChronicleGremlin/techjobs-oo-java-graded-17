@@ -85,8 +85,6 @@ public class JobTest {
         assertEquals(testJob.toString(), testString);
     }
 
-
-
     @Test
     public void testToStringHandlesJobDoesNotExist() {
         Job testJob = new Job();

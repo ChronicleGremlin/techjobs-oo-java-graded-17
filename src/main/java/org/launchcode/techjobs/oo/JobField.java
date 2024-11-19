@@ -20,6 +20,7 @@ public abstract class JobField {
         this.value = value;
     }
 
+
     //custom toString, equals, and hashCode methods
     @Override
     public String toString() {
@@ -27,7 +28,7 @@ public abstract class JobField {
     }
 
     @Override
-    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
+    public boolean equals(Object o) {  //two objects are equal if they have the same id.
         if (this == o) return true;
         if (!(o instanceof JobField)) return false;
         JobField jobField = (JobField) o;
