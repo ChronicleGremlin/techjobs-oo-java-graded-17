@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
 public class Job {
 
     private int id;
@@ -95,4 +97,33 @@ public class Job {
     public void setCoreCompetency(CoreCompetency coreCompetency) {
         this.coreCompetency = coreCompetency;
     }
+
+    @Override
+    public String toString() {
+        if (employer == null && location == null && positionType == null && coreCompetency == null) {
+            return "OOPS! This job does not seem to exist.";
+        }
+
+        if(employer == null || Objects.equals(employer.getValue(), "")){
+            this.employer = new Employer("Data not available");
+        }
+        if(location == null || Objects.equals(location.getValue(), "")) {
+            this.location = new Location("Data not available");
+        }
+        if(positionType == null || Objects.equals(positionType.getValue(), "")) {
+            this.positionType = new PositionType("Data not available");
+        }
+        if(coreCompetency == null || Objects.equals(coreCompetency.getValue(), "")) {
+            this.coreCompetency = new CoreCompetency("Data not available");
+        }
+
+        return "\n" +
+                "ID: " + id + '\n' +
+                "Name: " + name + '\n' +
+                "Employer: " + employer + '\n' +
+                "Location: " + location + '\n' +
+                "Position Type: " + positionType + '\n' +
+                "Core Competency: " + coreCompetency + "\n";
+    }
+
 }
