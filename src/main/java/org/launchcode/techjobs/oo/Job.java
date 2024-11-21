@@ -98,6 +98,10 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    public static void resetClassId() {
+        nextId = 1;
+    }
+
     @Override
     public String toString() {
         if (employer == null && location == null && positionType == null && coreCompetency == null) {
@@ -117,13 +121,13 @@ public class Job {
             this.coreCompetency = new CoreCompetency("Data not available");
         }
 
-        return "\n" +
-                "ID: " + id + '\n' +
-                "Name: " + name + '\n' +
-                "Employer: " + employer + '\n' +
-                "Location: " + location + '\n' +
-                "Position Type: " + positionType + '\n' +
-                "Core Competency: " + coreCompetency + "\n";
+        return System.lineSeparator() +
+                "ID: " + id + System.lineSeparator() +
+                "Name: " + name + System.lineSeparator() +
+                "Employer: " + employer + System.lineSeparator() +
+                "Location: " + location + System.lineSeparator() +
+                "Position Type: " + positionType + System.lineSeparator() +
+                "Core Competency: " + coreCompetency + System.lineSeparator();
     }
 
 }
