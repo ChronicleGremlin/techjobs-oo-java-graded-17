@@ -47,6 +47,7 @@ public class JobTest {
         assertNotEquals(testJobB, testJobA);
     }
 
+    //gets expected lineSeparated result
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
