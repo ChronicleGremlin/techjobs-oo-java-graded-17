@@ -54,7 +54,7 @@ public class JobTest {
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertTrue(testJob.toString().startsWith(System.lineSeparator()));
-        assertTrue(testJob.toString().startsWith(System.lineSeparator()));
+        assertTrue(testJob.toString().endsWith(System.lineSeparator()));
     }
 
     @Test
