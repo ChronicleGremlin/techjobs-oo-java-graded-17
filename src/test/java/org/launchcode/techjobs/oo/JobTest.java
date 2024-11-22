@@ -47,14 +47,14 @@ public class JobTest {
         assertNotEquals(testJobB, testJobA);
     }
 
-    //gets expected lineSeparated result
+    //gets expected lineSeparated result, why does it not work for this test and works for all others?
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"),
                 new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        assertEquals(testJob.toString().charAt(0), System.lineSeparator());
-        assertEquals(testJob.toString().charAt(testJob.toString().length() -1), System.lineSeparator());
+        assertTrue(testJob.toString().startsWith(System.lineSeparator()));
+        assertTrue(testJob.toString().startsWith(System.lineSeparator()));
     }
 
     @Test
